@@ -368,7 +368,7 @@ a {
   display: flex;
   align-items: center;
   gap: 48px;
-  margin-bottom: 72px;
+  margin-bottom: 112px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -1367,7 +1367,7 @@ a {
   .service {
     flex-direction: column;
     gap: 24px;
-    margin-bottom: 56px;
+    margin-bottom: 80px;
   }
 
   .service--image-left {
