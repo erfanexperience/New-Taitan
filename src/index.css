@@ -364,11 +364,19 @@ a {
   letter-spacing: 0.02em;
 }
 
+.service-block-wrap {
+  margin-bottom: 120px;
+}
+
+.service-block-wrap:last-child {
+  margin-bottom: 0;
+}
+
 .service {
   display: flex;
   align-items: center;
   gap: 48px;
-  margin-bottom: 112px;
+  margin-bottom: 0;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -1364,10 +1372,18 @@ a {
     margin-bottom: 40px;
   }
 
+  .service-block-wrap {
+    margin-bottom: 88px;
+  }
+
+  .service-block-wrap:last-child {
+    margin-bottom: 0;
+  }
+
   .service {
     flex-direction: column;
     gap: 24px;
-    margin-bottom: 80px;
+    margin-bottom: 0;
   }
 
   .service--image-left {

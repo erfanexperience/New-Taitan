@@ -67,7 +67,7 @@ export default function Services() {
     <section className="services" id="services">
       <h2 className="services-title">SERVICES</h2>
       {SERVICES.map((item, i) => (
-        <div key={item.heading} ref={(el) => (refs.current[i] = el)} data-index={i}>
+        <div key={item.heading} className="service-block-wrap" ref={(el) => (refs.current[i] = el)} data-index={i}>
           <ServiceBlock item={item} isVisible={!!visible[i]} />
         </div>
       ))}

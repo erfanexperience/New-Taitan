@@ -22,8 +22,8 @@ npm run build
 
 ## Deploy to GitHub Pages
 
-```bash
-npm run deploy
-```
+**Option A – Automatic (recommended)**  
+On every push to `main`, the GitHub Action (`.github/workflows/deploy.yml`) builds the app and deploys it. In the repo **Settings → Pages**, set **Source** to **GitHub Actions**. The site will be at `https://erfanexperience.github.io/New-Taitan/`.
 
-Then in the repo **Settings → Pages**, set source to the **gh-pages** branch (or keep default if already set). The site will be at `https://erfanexperience.github.io/New-Taitan/`.
+**Option B – Manual**  
+Run `npm run deploy`, then in **Settings → Pages** set source to the **gh-pages** branch.
