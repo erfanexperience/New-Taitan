@@ -1217,9 +1217,9 @@ a {
 /* Responsive: stack and adjust for small screens */
 @media (max-width: 768px) {
   .hero {
-    min-height: 100vh;
-    height: 100svh;
-    max-height: 100svh;
+    min-height: 88vh;
+    height: 88svh;
+    max-height: 88svh;
   }
 
   .hero-inner {
@@ -1256,29 +1256,29 @@ a {
   }
 
   .navbar-left-img {
-    height: 44px;
+    height: 48px;
     width: auto;
   }
 
   .navbar-toggle {
     display: flex;
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    min-height: 44px;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
   }
 
   .navbar-toggle-bar {
-    width: 22px;
+    width: 24px;
     height: 3px;
   }
 
   .navbar-toggle[aria-expanded="true"] .navbar-toggle-bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+    transform: translateY(7.5px) rotate(45deg);
   }
 
   .navbar-toggle[aria-expanded="true"] .navbar-toggle-bar:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+    transform: translateY(-7.5px) rotate(-45deg);
   }
 
   .navbar-menu-segment {
@@ -1359,8 +1359,15 @@ a {
     padding: 56px 20px 72px;
   }
 
+  .discover-text {
+    margin-bottom: 0;
+    font-size: clamp(1.0625rem, 2.5vw, 1.25rem);
+  }
+
   .discover-countries {
+    margin-top: 0;
     margin-bottom: 32px;
+    font-size: clamp(1.0625rem, 2.5vw, 1.25rem);
   }
 
   .services {
