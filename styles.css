@@ -73,15 +73,6 @@ a {
   display: none;
 }
 
-/* Desktop: show left.png only. Mobile: show mobile-left.png only (see media query). !important for cache/CDN (e.g. GitHub Pages). */
-.navbar-logo-desktop {
-  display: block !important;
-}
-
-.navbar-logo-mobile {
-  display: none !important;
-}
-
 .navbar-toggle {
   display: none;
   flex-direction: column;
@@ -147,15 +138,8 @@ a {
   height: 68px;
   width: auto;
   object-fit: contain;
+  display: block;
   flex-shrink: 0;
-}
-
-.navbar-logo-desktop.navbar-left-img {
-  display: block !important;
-}
-
-.navbar-logo-mobile.navbar-left-img {
-  display: none !important;
 }
 
 .navbar-segment {
@@ -1265,12 +1249,7 @@ a {
     padding: 0 4px;
   }
 
-  .navbar-logo-desktop {
-    display: none !important;
-  }
-
-  .navbar-logo-mobile {
-    display: block !important;
+  .navbar-left-img {
     height: 40px;
     width: auto;
   }
