@@ -1,4 +1,4 @@
-# New-Taitan-2026
+# New-Taitan
 
 TAITAN – AI Mission Command landing page. React (Vite) app with hero, services, partnership, team, reviews, and contact sections.
 
@@ -26,4 +26,4 @@ npm run build
 npm run deploy
 ```
 
-Then in the repo **Settings → Pages**, set source to the **gh-pages** branch (or keep default if already set). The site will be at `https://erfanexperience.github.io/New-Taitan-2026/`.
+Then in the repo **Settings → Pages**, set source to the **gh-pages** branch (or keep default if already set). The site will be at `https://erfanexperience.github.io/New-Taitan/`.

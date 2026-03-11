@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://erfanexperience.github.io/New-Taitan-2026",
+  "homepage": "https://erfanexperience.github.io/New-Taitan",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
