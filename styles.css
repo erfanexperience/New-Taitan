@@ -73,13 +73,13 @@ a {
   display: none;
 }
 
-/* Desktop: show left.png only. Mobile: show mobile-left.png only (see media query) */
+/* Desktop: show left.png only. Mobile: show mobile-left.png only (see media query). !important for cache/CDN (e.g. GitHub Pages). */
 .navbar-logo-desktop {
-  display: block;
+  display: block !important;
 }
 
 .navbar-logo-mobile {
-  display: none;
+  display: none !important;
 }
 
 .navbar-toggle {
@@ -151,11 +151,11 @@ a {
 }
 
 .navbar-logo-desktop.navbar-left-img {
-  display: block;
+  display: block !important;
 }
 
 .navbar-logo-mobile.navbar-left-img {
-  display: none;
+  display: none !important;
 }
 
 .navbar-segment {
