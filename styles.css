@@ -73,6 +73,11 @@ a {
   display: none;
 }
 
+/* Desktop: show left.png only. Mobile: show mobile-left.png only (see media query) */
+.navbar-logo-desktop {
+  display: block;
+}
+
 .navbar-logo-mobile {
   display: none;
 }
@@ -142,8 +147,15 @@ a {
   height: 68px;
   width: auto;
   object-fit: contain;
-  display: block;
   flex-shrink: 0;
+}
+
+.navbar-logo-desktop.navbar-left-img {
+  display: block;
+}
+
+.navbar-logo-mobile.navbar-left-img {
+  display: none;
 }
 
 .navbar-segment {
