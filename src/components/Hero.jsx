@@ -11,7 +11,7 @@ export default function Hero({ navOpen, setNavOpen }) {
         </div>
 
         <nav className={`navbar ${navOpen ? 'navbar--open' : ''}`} aria-label="Main navigation">
-          <img src={asset('Assests/left.png')} alt="TAITAN" className="navbar-left-img" />
+          <img src={asset('Assests/left.webp')} alt="TAITAN" className="navbar-left-img" />
           <button
             type="button"
             className="navbar-toggle"
