@@ -2007,15 +2007,16 @@ a {
   .partner-main-img-wrap {
     max-height: none;
     height: auto;
-    border-radius: 16px;
+    border-radius: 0 0 16px 16px;
     margin: 0;
+    overflow: hidden;
   }
 
   .partner-main-img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 0 0 24px 24px;
+    border-radius: 0 0 16px 16px;
   }
 
   /* Mobile: footer centered */
