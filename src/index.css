@@ -1805,14 +1805,17 @@ a {
     order: 2;
     width: 100%;
     margin-top: 16px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .service-image img {
     width: 100%;
     max-width: 100%;
     border-radius: 16px;
-    margin: 0;
+    margin: 0 auto;
+    display: block;
   }
 
   .service .service-content,
@@ -1853,6 +1856,33 @@ a {
 
   .partner-center {
     order: 1;
+  }
+
+  /* Mobile: no rotation/animation on partnership images */
+  .partner-block--visible .partner-img-left,
+  .partner-block--visible .partner-img-right {
+    transform: none !important;
+    transition: none;
+  }
+
+  /* Mobile: partnership logos in circle white frames */
+  .partner-logos {
+    gap: 16px;
+  }
+
+  .partner-logos .partner-logo {
+    background: #fff;
+    border-radius: 50%;
+    padding: 14px;
+    box-sizing: content-box;
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+  }
+
+  .partner-logos .partner-logo-taitan {
+    width: 72px;
+    height: 72px;
   }
 
   .partner-text {
