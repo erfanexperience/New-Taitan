@@ -10,6 +10,7 @@ export default function PartnerWithUs() {
       <div className="partner-with-us-inner">
         <div className="partner-with-us-left">
           <img src={asset('Assests/partner-side.svg')} alt="" className="partner-side-img" />
+          <img src={asset('Assests/Partner - mobile - top.webp')} alt="" className="partner-side-img-mobile" />
         </div>
         <div className="partner-with-us-center">
           <h2 className="partner-with-us-title">Partner With Us</h2>
@@ -28,7 +29,8 @@ export default function PartnerWithUs() {
         </div>
         <div className="partner-with-us-right">
           <div className="partner-main-img-wrap">
-            <img src={asset('Assests/partner.avif')} alt="Partner with us" className="partner-main-img" />
+            <img src={asset('Assests/partner.avif')} alt="Partner with us" className="partner-main-img partner-main-img-desktop" />
+            <img src={asset('Assests/mobile - partner.jpg')} alt="Partner with us" className="partner-main-img partner-main-img-mobile" />
           </div>
         </div>
       </div>
