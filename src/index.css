@@ -1818,6 +1818,12 @@ a {
     display: block;
   }
 
+  /* Ensure no desktop-specific radius overrides on mobile */
+  .service:nth-child(odd) .service-image img,
+  .service:nth-child(even) .service-image img {
+    border-radius: 16px;
+  }
+
   .service .service-content,
   .service .service-image {
     opacity: 1;
@@ -1933,7 +1939,7 @@ a {
 
   .team-title {
     margin-bottom: 32px;
-    text-align: left;
+    text-align: center;
   }
 
   .team-grid {
@@ -1948,6 +1954,8 @@ a {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    background: transparent;
+    box-shadow: none;
   }
 
   .team-card-img {
