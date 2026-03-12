@@ -1892,7 +1892,7 @@ a {
   }
 
   .partner-text {
-    padding: 20px 0 0;
+    padding: 12px 0 0;
     min-width: 0;
     max-width: none;
   }
@@ -1911,7 +1911,7 @@ a {
     order: 2;
     border-radius: 16px;
     transform: none;
-    margin-top: 20px;
+    margin-top: 12px;
     display: flex;
   }
 
@@ -1938,7 +1938,7 @@ a {
   }
 
   .team-title {
-    margin-bottom: 32px;
+    margin-bottom: 48px;
     text-align: center;
   }
 
