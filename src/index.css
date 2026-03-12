@@ -1801,7 +1801,9 @@ a {
     padding-right: 0;
   }
 
-  .service-image {
+  .service-image,
+  .service:nth-child(odd) .service-image,
+  .service:nth-child(even) .service-image {
     order: 2;
     width: 100%;
     margin-top: 16px;
@@ -1810,18 +1812,14 @@ a {
     align-items: center;
   }
 
-  .service-image img {
+  .service-image img,
+  .service:nth-child(odd) .service-image img,
+  .service:nth-child(even) .service-image img {
     width: 100%;
     max-width: 100%;
     border-radius: 16px;
-    margin: 0 auto;
+    margin: 0;
     display: block;
-  }
-
-  /* Ensure no desktop-specific radius overrides on mobile */
-  .service:nth-child(odd) .service-image img,
-  .service:nth-child(even) .service-image img {
-    border-radius: 16px;
   }
 
   .service .service-content,
