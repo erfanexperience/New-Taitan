@@ -30,11 +30,11 @@ a {
   text-decoration: none;
 }
 
-/* Hero section: 100vh, max-width 1440px, centered */
+/* Hero section: 100vh, max-width 90vw, centered */
 .hero {
   min-height: 100vh;
   width: 100%;
-  max-width: 1440px;
+  max-width: 90vw;
   margin: 0 auto;
   position: relative;
   display: flex;
@@ -292,7 +292,7 @@ a {
   background: #F4F4F4;
   border-radius: 32px;
   padding: 80px 32px 100px;
-  max-width: 1440px;
+  max-width: 90vw;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
@@ -358,7 +358,7 @@ a {
 .services {
   background: #fff;
   padding: 80px 28px 100px;
-  max-width: 1440px;
+  max-width: 90vw;
   margin: 0 auto;
 }
 
@@ -486,7 +486,7 @@ a {
 .partnership {
   background: #fff;
   padding: 80px 28px 100px;
-  max-width: 1440px;
+  max-width: 90vw;
   margin: 0 auto;
   overflow: visible;
 }
@@ -643,7 +643,7 @@ a {
   background: #F4F4F4;
   border-radius: 32px;
   padding: 64px 28px 80px;
-  max-width: 1440px;
+  max-width: 90vw;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
@@ -739,7 +739,7 @@ a {
 /* Partners / Our leadership team has partnered with */
 .partners-logos {
   padding: 80px 28px 100px;
-  max-width: 1440px;
+  max-width: 90vw;
   margin: 0 auto;
 }
 
@@ -797,7 +797,7 @@ a {
   background: #F4F4F4;
   border-radius: 32px;
   padding: 80px 28px 100px;
-  max-width: 1440px;
+  max-width: 90vw;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
@@ -910,7 +910,7 @@ a {
   align-items: center;
   justify-content: center;
   padding: 40px 28px;
-  max-width: 1440px;
+  max-width: 90vw;
   margin: 0 auto;
   background: #fff;
   box-sizing: border-box;
@@ -972,7 +972,7 @@ a {
   background: #0A090F;
   border-radius: 32px;
   padding: 0 32px;
-  max-width: 1440px;
+  max-width: 90vw;
   max-height: 100vh;
   margin-left: auto;
   margin-right: auto;
@@ -1115,10 +1115,13 @@ a {
 /* Footer */
 .site-footer {
   width: 100%;
+  max-width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
   background: #E8E8E8;
   border-radius: 32px 32px 0 0;
   padding: 56px 28px 56px;
-  margin: 80px 0 0;
+  margin-top: 80px;
   box-sizing: border-box;
 }
 
