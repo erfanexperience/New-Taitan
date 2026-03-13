@@ -1239,6 +1239,22 @@ a {
 
 /* Responsive: stack and adjust for small screens */
 @media (max-width: 768px) {
+  /* Mobile: main sections slightly inset (96% of viewport) and centered */
+  .hero,
+  .discover,
+  .services,
+  .partnership,
+  .team,
+  .partners-logos,
+  .reviews,
+  .innovation,
+  .partner-with-us,
+  .site-footer {
+    max-width: 96vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .hero {
     min-height: 88vh;
     height: 88svh;
