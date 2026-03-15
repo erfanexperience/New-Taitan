@@ -577,12 +577,14 @@ a {
   align-items: center;
   justify-content: center;
   padding: 28px 0;
+  min-height: 380px;
+  aspect-ratio: 1;
 }
 
 .partner-img img {
   width: 100%;
   height: 100%;
-  min-height: 380px;
+  min-height: 100%;
   aspect-ratio: 1;
   object-fit: cover;
   display: block;
@@ -626,19 +628,19 @@ a {
   display: block;
   width: 100%;
   height: 100%;
+  min-height: 100%;
   padding: 0;
   border: none;
   background: none;
   cursor: pointer;
   font: inherit;
-  min-height: 380px;
   aspect-ratio: 1;
 }
 
 .partner-img--video .partner-video-wrap img {
   width: 100%;
   height: 100%;
-  min-height: 380px;
+  min-height: 100%;
   aspect-ratio: 1;
   object-fit: cover;
   display: block;
@@ -1581,13 +1583,18 @@ a {
   .partner-img {
     flex: 0 0 auto;
     width: 100%;
-    max-height: 280px;
+    min-height: 0;
+    aspect-ratio: 1;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
     justify-content: center;
   }
 
   .partner-img img {
     min-height: 0;
     aspect-ratio: 1;
+    object-fit: cover;
   }
 
   .partner-img-left {
@@ -1604,8 +1611,10 @@ a {
 
   .partner-img-right img {
     border-radius: 16px;
-    max-width: 320px;
-    margin: 0 auto;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    margin: 0;
   }
 
   .team {
@@ -1974,6 +1983,8 @@ a {
   .partner-img {
     flex: 0 0 auto;
     width: 100%;
+    min-height: 0;
+    aspect-ratio: 1;
     justify-content: center;
   }
 
@@ -1987,11 +1998,16 @@ a {
     transform: none;
     margin-top: 4px;
     display: flex;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .partner-img-right img {
     width: 100%;
     height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
     max-width: 100%;
     border-radius: 16px;
     margin: 0;
@@ -1999,12 +2015,13 @@ a {
 
   .partner-img--video .partner-video-wrap {
     min-height: 0;
-    aspect-ratio: 16/9;
+    aspect-ratio: 1;
   }
 
   .partner-img--video .partner-video-wrap img {
     min-height: 0;
-    aspect-ratio: 16/9;
+    aspect-ratio: 1;
+    object-fit: cover;
     border-radius: 16px;
   }
 
