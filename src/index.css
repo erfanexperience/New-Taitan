@@ -1413,13 +1413,14 @@ a {
   }
 
   .hero-content-wrap {
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     padding-top: 24px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 0;
+    padding-right: 0;
     padding-bottom: 0;
     flex: 0 0 auto;
+    width: 100%;
   }
 
   .hero-content {
@@ -1984,7 +1985,8 @@ a {
     flex: 0 0 auto;
     width: 100%;
     min-height: 0;
-    aspect-ratio: 1;
+    padding: 0;
+    aspect-ratio: auto;
     justify-content: center;
   }
 
@@ -1996,33 +1998,41 @@ a {
     order: 2;
     border-radius: 16px;
     transform: none;
-    margin-top: 4px;
+    margin-top: 16px;
     display: flex;
-    max-width: 320px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center;
+    align-items: center;
   }
 
   .partner-img-right img {
     width: 100%;
     height: auto;
-    aspect-ratio: 1;
     object-fit: cover;
     max-width: 100%;
     border-radius: 16px;
     margin: 0;
+    min-height: 0;
+    aspect-ratio: auto;
+    display: block;
   }
 
   .partner-img--video .partner-video-wrap {
     min-height: 0;
-    aspect-ratio: 1;
+    height: auto;
+    aspect-ratio: auto;
   }
 
   .partner-img--video .partner-video-wrap img {
     min-height: 0;
-    aspect-ratio: 1;
+    height: auto;
     object-fit: cover;
     border-radius: 16px;
+    aspect-ratio: auto;
+    display: block;
   }
 
   .partner-play-btn {
