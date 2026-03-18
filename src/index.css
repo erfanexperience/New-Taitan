@@ -984,6 +984,8 @@ a {
   font-weight: 700;
   color: #E3E3E3;
   letter-spacing: 0.02em;
+  white-space: nowrap; /* keep "INNOVATION" as a single unbroken word */
+  line-height: 1;
   transform: rotate(-5deg);
   display: inline-block;
 }
@@ -1294,6 +1296,20 @@ a {
 }
 
 /* Responsive: stack and adjust for small screens */
+@media (max-width: 1300px) and (min-width: 769px) {
+  /* Medium screens: shift nav pill from centered to right aligned */
+  .navbar-menu-segment {
+    left: auto;
+    right: 20px;
+    transform: none;
+    justify-content: flex-end;
+  }
+
+  .navbar-menu {
+    justify-content: flex-end;
+  }
+}
+
 @media (max-width: 768px) {
   /* Mobile: main sections slightly inset (96% of viewport) and centered */
   .hero,
@@ -1643,8 +1659,8 @@ a {
   }
 
   .team-card-img {
-    width: 160px;
-    height: 160px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     flex-shrink: 0;
   }
@@ -1654,7 +1670,7 @@ a {
   }
 
   .team-card:hover .team-card-img {
-    height: 160px;
+    height: 220px;
   }
 
   .team-card-caption {
@@ -1671,10 +1687,11 @@ a {
 
   .team-name {
     margin-bottom: 4px;
+    font-size: 1.4rem;
   }
 
   .team-role {
-    font-size: 0.9375rem;
+    font-size: 1.05rem;
   }
 
   .partners-logos {
@@ -2080,8 +2097,8 @@ a {
   }
 
   .team-card-img {
-    width: 192px;
-    height: 192px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     flex-shrink: 0;
     margin-bottom: 12px;
@@ -2098,10 +2115,11 @@ a {
 
   .team-name {
     margin-bottom: 4px;
+    font-size: 1.4rem;
   }
 
   .team-role {
-    font-size: 0.9375rem;
+    font-size: 1.05rem;
   }
 
   /* Mobile: Innovation height & sizing */
@@ -2111,7 +2129,9 @@ a {
   }
 
   .innovation-word {
-    font-size: clamp(2.8rem, 11vw, 4rem);
+    font-size: clamp(2.2rem, 10vw, 4rem);
+    white-space: nowrap;
+    line-height: 1;
   }
 
   /* Mobile: Partner With Us layout fix */
