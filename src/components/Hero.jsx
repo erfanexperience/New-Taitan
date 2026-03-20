@@ -6,8 +6,8 @@ export default function Hero({ navOpen, setNavOpen }) {
     <header className="hero" role="banner">
       <div className="hero-inner">
         <div className="hero-bg-wrap">
-          <img src={asset('Assests/Web-Hero-BG.webp')} alt="" className="hero-bg hero-bg-desktop" />
-          <img src={asset('Assests/Mobile - hero.webp')} alt="" className="hero-bg hero-bg-mobile" />
+          <img src={asset('Assests/Web-Hero-BG - 2.webp')} alt="" className="hero-bg hero-bg-desktop" />
+          <img src={asset('Assests/Mobile - hero - 2.webp')} alt="" className="hero-bg hero-bg-mobile" />
         </div>
 
         <nav className={`navbar ${navOpen ? 'navbar--open' : ''}`} aria-label="Main navigation">
