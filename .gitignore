@@ -18,3 +18,8 @@ node_modules/
 
 # Build
 dist/
+
+# Secrets (Vite: VITE_* is bundled — use a backend proxy in production)
+.env
+.env.local
+.env.*.local

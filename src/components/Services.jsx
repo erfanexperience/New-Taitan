@@ -3,23 +3,23 @@ import { asset } from '../lib/assets';
 
 const SERVICES = [
   {
-    heading: 'Governance & Compliance',
-    desc: 'We help organizations deploy AI responsibly by establishing the oversight, controls, and standards required for safe and compliant operations.',
-    list: ['Model Validation & Safety', 'Regulatory Alignment', 'Risk Monitoring', 'Audit & Controls'],
+    heading: 'Who We Are',
+    desc: 'TAITAN is a Saudi-based firm led by a seasoned team of executives with decades of experience across government, industry, and global markets. With deep roots in both the United States and the Kingdom of Saudi Arabia, we bring a practical understanding of institutional frameworks, regulatory environments, and strategic priorities. We are driven by a commitment to deliver results, bridging innovation, investment, and execution to help organizations successfully operate and grow within complex international landscapes.',
+    list: [],
     image: 'Assests/Rounded rectangle-1.webp',
     imageLeft: false,
   },
   {
-    heading: 'Education & Development',
-    desc: 'We equip teams with the practical skills needed to work confidently with AI-enabled systems through structured, real-world training programs.',
-    list: ['AI Literacy', 'Workflow Education', 'Executive Enablement', 'Scenario Workshops'],
+    heading: 'What We Do',
+    desc: 'TAITAN partners with corporate leaders and investors to provide strategic guidance and hands-on execution across business development, market entry, regulatory navigation, and deal origination. From initial strategy through to successful execution and closing, we help organizations identify opportunities, structure engagements, and navigate the Saudi and U.S. ecosystems to drive measurable outcomes and long-term value.',
+    list: [],
     image: 'Assests/Rounded rectangle-2.webp',
     imageLeft: true,
   },
   {
-    heading: 'Advisory & Consulting',
-    desc: 'We guide organizations in shaping and scaling AI-driven initiatives, improving decision-making and operational efficiency.',
-    list: ['AI Strategy', 'Process Optimization', 'Architecture Guidance', 'Implementation Support'],
+    heading: 'How We Work',
+    desc: 'TAITAN brings together the full strength of its strategic, operational, and relationship capital to address each client\'s specific objectives. We take a tailored, hands-on approach—aligning the right expertise, partnerships, and resources to each engagement. With coverage across key sectors including technology, healthcare, aerospace, and advanced manufacturing, and a primary focus on bridging the United States and Saudi Arabia, we operate as an extension of our clients\' leadership teams to drive execution, not just strategy.',
+    list: [],
     image: 'Assests/Rounded rectangle-3.webp',
     imageLeft: false,
   },
@@ -31,14 +31,16 @@ function ServiceBlock({ item, isVisible }) {
       <div className="service-content">
         <h3 className="service-heading">{item.heading}</h3>
         <p className="service-desc">{item.desc}</p>
-        <ul className="service-list">
-          {item.list.map((li) => (
-            <li key={li}>{li}</li>
-          ))}
-        </ul>
+        {item.list.length > 0 ? (
+          <ul className="service-list">
+            {item.list.map((li) => (
+              <li key={li}>{li}</li>
+            ))}
+          </ul>
+        ) : null}
       </div>
       <div className="service-image">
-        <img src={asset(item.image)} alt={item.heading} />
+        <img src={asset(item.image)} alt="" />
       </div>
     </article>
   );
@@ -64,8 +66,7 @@ export default function Services() {
   }, []);
 
   return (
-    <section className="services" id="services">
-      <h2 className="services-title">SERVICES</h2>
+    <section className="services" id="who-we-are">
       {SERVICES.map((item, i) => (
         <div key={item.heading} className="service-block-wrap" ref={(el) => (refs.current[i] = el)} data-index={i}>
           <ServiceBlock item={item} isVisible={!!visible[i]} />
