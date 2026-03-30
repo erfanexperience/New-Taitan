@@ -4,6 +4,7 @@ import SiteNavbar from './SiteNavbar';
 
 export default function Hero({ navOpen, setNavOpen }) {
   const [showMobileHeroAlt, setShowMobileHeroAlt] = useState(false);
+  const [showDesktopHeroAlt, setShowDesktopHeroAlt] = useState(false);
 
   useEffect(() => {
     // Only animate the hero image swap on mobile screens.
@@ -37,11 +38,59 @@ export default function Hero({ navOpen, setNavOpen }) {
     };
   }, []);
 
+  useEffect(() => {
+    // Desktop hero: swap background + reveal the partner (Discover) section.
+    const mql = window.matchMedia('(min-width: 769px)');
+    if (!mql.matches) return undefined;
+
+    document.documentElement.dataset.desktopHeroStage = 'tall';
+
+    const timeoutId = window.setTimeout(() => {
+      setShowDesktopHeroAlt(true);
+      document.documentElement.dataset.desktopHeroStage = 'main';
+    }, 2000);
+
+    const handleChange = (e) => {
+      if (!e.matches) {
+        window.clearTimeout(timeoutId);
+        setShowDesktopHeroAlt(false);
+        document.documentElement.dataset.desktopHeroStage = 'tall';
+      }
+    };
+
+    if (typeof mql.addEventListener === 'function') {
+      mql.addEventListener('change', handleChange);
+      return () => {
+        window.clearTimeout(timeoutId);
+        mql.removeEventListener('change', handleChange);
+      };
+    }
+
+    mql.addListener(handleChange);
+    return () => {
+      window.clearTimeout(timeoutId);
+      mql.removeListener(handleChange);
+    };
+  }, []);
+
   return (
-    <header className="hero" role="banner">
+    <header className={`hero ${showDesktopHeroAlt ? 'hero--desktop-normal' : 'hero--desktop-tall'}`} role="banner">
       <div className="hero-inner">
         <div className="hero-bg-wrap">
-          <img src={asset('Assests/Web-Hero-BG - 5.webp')} alt="" className="hero-bg hero-bg-desktop" />
+          <img
+            src={asset('Assests/Web-Hero-BG - 7.webp')}
+            alt=""
+            className={`hero-bg hero-bg-desktop hero-bg-desktop-img ${
+              showDesktopHeroAlt ? 'hero-bg-desktop-img--hidden' : 'hero-bg-desktop-img--shown'
+            }`}
+          />
+          <img
+            src={asset('Assests/Web-Hero-BG - 5.webp')}
+            alt=""
+            className={`hero-bg hero-bg-desktop hero-bg-desktop-img ${
+              showDesktopHeroAlt ? 'hero-bg-desktop-img--shown' : 'hero-bg-desktop-img--hidden'
+            }`}
+          />
           <img
             src={asset('Assests/Mobile - hero - 3.webp')}
             alt=""
