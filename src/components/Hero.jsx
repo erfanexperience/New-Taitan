@@ -65,7 +65,7 @@ export default function Hero({ navOpen, setNavOpen }) {
             <h1 className="hero-heading">
               <span className="hero-heading-desktop">
                 <span className="hero-heading-line1">Built to Bridge.</span>
-                <span className="hero-heading-line2">Driven. to Deliver</span>
+                <span className="hero-heading-line2">Driven to Deliver.</span>
               </span>
               <span className="hero-heading-mobile">TAITAN</span>
             </h1>
