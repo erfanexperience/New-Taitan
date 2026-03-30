@@ -113,9 +113,9 @@ a {
   transform: scale(1.04);
   filter: blur(10px);
   transition:
-    opacity 1400ms cubic-bezier(0.2, 0.85, 0.25, 1),
-    transform 1400ms cubic-bezier(0.2, 0.85, 0.25, 1),
-    filter 1400ms cubic-bezier(0.2, 0.85, 0.25, 1);
+    opacity 1800ms cubic-bezier(0.2, 0.85, 0.25, 1),
+    transform 1800ms cubic-bezier(0.2, 0.85, 0.25, 1),
+    filter 1800ms cubic-bezier(0.2, 0.85, 0.25, 1);
   will-change: opacity, transform, filter;
 }
 
@@ -134,23 +134,27 @@ a {
 /* Taller initial desktop hero for intro animation */
 @media (min-width: 769px) {
   .hero {
-    transition: min-height 1200ms cubic-bezier(0.2, 0.85, 0.25, 1);
+    transition: min-height 1600ms cubic-bezier(0.2, 0.85, 0.25, 1);
   }
 
   .hero--desktop-tall {
-    min-height: 105vh;
+    min-height: 100vh;
   }
 
   .hero--desktop-tall .hero-inner {
-    min-height: 105vh;
+    min-height: 100vh;
+  }
+
+  html[data-desktop-hero-stage='tall'] .hero-bg-wrap {
+    bottom: 44px; /* add gap under the tall hero image */
   }
 
   /* Reveal the Discover band after the hero background swap */
   html[data-desktop-hero-stage='tall'] .discover {
     opacity: 0;
-    transform: translateY(-28px);
-    filter: blur(10px);
-    margin-top: -160px;
+    transform: translateY(-110px);
+    filter: blur(16px);
+    margin-top: 0;
     pointer-events: none;
   }
 
@@ -161,10 +165,9 @@ a {
     margin-top: 0;
     pointer-events: auto;
     transition:
-      opacity 900ms cubic-bezier(0.2, 0.85, 0.25, 1),
-      transform 900ms cubic-bezier(0.2, 0.85, 0.25, 1),
-      filter 900ms cubic-bezier(0.2, 0.85, 0.25, 1),
-      margin-top 900ms cubic-bezier(0.2, 0.85, 0.25, 1);
+      opacity 1200ms cubic-bezier(0.2, 0.85, 0.25, 1),
+      transform 1200ms cubic-bezier(0.2, 0.85, 0.25, 1),
+      filter 1200ms cubic-bezier(0.2, 0.85, 0.25, 1);
   }
 }
 

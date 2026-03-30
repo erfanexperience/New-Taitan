@@ -48,7 +48,7 @@ export default function Hero({ navOpen, setNavOpen }) {
     const timeoutId = window.setTimeout(() => {
       setShowDesktopHeroAlt(true);
       document.documentElement.dataset.desktopHeroStage = 'main';
-    }, 2000);
+    }, 3000);
 
     const handleChange = (e) => {
       if (!e.matches) {
