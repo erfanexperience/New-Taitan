@@ -1961,7 +1961,7 @@ a {
   .hero-content-wrap {
     justify-content: center;
     align-items: center;
-    padding-top: 24px;
+    padding-top: 40px;
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 0;
@@ -1974,7 +1974,6 @@ a {
     padding-right: 0;
     max-width: 100%;
     text-align: center;
-    transform: translateY(18px);
   }
 
   .hero-heading-desktop .hero-heading-line1,
@@ -1987,7 +1986,7 @@ a {
   }
 
   .hero-heading-mobile {
-    display: block;
+    display: inline-block;
     font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
     font-size: clamp(2.65rem, 11vw, 3.35rem);
     font-weight: 700;
@@ -1995,18 +1994,15 @@ a {
     text-transform: uppercase;
     line-height: 1.05;
     margin: 0;
-    text-shadow: none;
-    display: inline-block;
     background: #fff;
     color: #000;
     padding: 10px 22px;
-    border-radius: 9999px;
-    box-shadow: none;
+    border-radius: 9999px; /* pill-like frame */
+    text-shadow: none !important;
   }
 
   .hero-heading {
     margin-bottom: 6px;
-    text-shadow: none;
   }
 
   .hero-subheading-desktop {
@@ -2022,7 +2018,7 @@ a {
     line-height: 1.45;
     text-align: center;
     color: #fff;
-    text-shadow: none;
+    text-shadow: none !important;
   }
 
   .hero-subheading-mobile .country-saudi,
