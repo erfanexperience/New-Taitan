@@ -4,7 +4,7 @@ import { asset } from '../lib/assets';
 const GEMINI_MODEL = 'gemini-flash-latest';
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
-const TAITAN_SYSTEM_PROMPT = `You are a warm, articulate ambassador for TAITAN Global, an AI-focused strategic advisory firm serving enterprises in Saudi Arabia and the United States.
+const TAITAN_SYSTEM_PROMPT = `You are a warm, articulate ambassador for TAITAN, an AI-focused strategic advisory firm serving enterprises in Saudi Arabia and the United States.
 
 The visitor has described a project idea by voice; the transcript may contain small errors or filler words.
 
@@ -43,11 +43,56 @@ export default function PartnerWithUs({
   const [isTyping, setIsTyping] = useState(false);
 
   const recognitionRef = useRef(null);
+  const sectionRef = useRef(null);
+  const partnerRevealTimeoutRef = useRef(null);
   const finalTranscriptRef = useRef('');
   const latestSpeechRef = useRef('');
   const processAfterStopRef = useRef(null);
 
   const speechSupported = typeof window !== 'undefined' && !!getSpeechRecognition();
+
+  const [sectionInView, setSectionInView] = useState(() => {
+    if (typeof window === 'undefined') return true;
+    return !window.matchMedia('(min-width: 769px)').matches;
+  });
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const mq = window.matchMedia('(min-width: 769px)');
+    if (!mq.matches) {
+      setSectionInView(true);
+      return;
+    }
+    const revealDelayMs = 200;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (partnerRevealTimeoutRef.current) {
+            window.clearTimeout(partnerRevealTimeoutRef.current);
+          }
+          partnerRevealTimeoutRef.current = window.setTimeout(() => {
+            partnerRevealTimeoutRef.current = null;
+            setSectionInView(true);
+          }, revealDelayMs);
+        } else {
+          if (partnerRevealTimeoutRef.current) {
+            window.clearTimeout(partnerRevealTimeoutRef.current);
+            partnerRevealTimeoutRef.current = null;
+          }
+        }
+      },
+      { rootMargin: '0px 0px -6% 0px', threshold: 0.14 }
+    );
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      if (partnerRevealTimeoutRef.current) {
+        window.clearTimeout(partnerRevealTimeoutRef.current);
+        partnerRevealTimeoutRef.current = null;
+      }
+    };
+  }, []);
 
   useEffect(() => {
     return () => {
@@ -253,7 +298,11 @@ export default function PartnerWithUs({
   const projectId = `${inputIdPrefix}partner-project`;
 
   return (
-    <section className="partner-with-us" {...(sectionId ? { id: sectionId } : {})}>
+    <section
+      ref={sectionRef}
+      className={`partner-with-us${sectionInView ? ' partner-with-us--in-view' : ''}`}
+      {...(sectionId ? { id: sectionId } : {})}
+    >
       <div className="partner-with-us-inner">
         <div className="partner-with-us-left">
           <img src={asset('Assests/partner-side.svg')} alt="" className="partner-side-img" />

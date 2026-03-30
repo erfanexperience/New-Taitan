@@ -6,7 +6,7 @@ export default function ProfilePage({ profile }) {
   const { name, title, image, bio, email, phones, linkedin } = profile;
 
   useEffect(() => {
-    document.title = `${name} – ${title} | TAITAN Global`;
+    document.title = `${name} – ${title} | TAITAN`;
     return () => { document.title = 'TAITAN – AI Mission Command'; };
   }, [name, title]);
 

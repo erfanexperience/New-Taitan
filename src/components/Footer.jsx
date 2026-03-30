@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="footer-inner">
         <div className="footer-col footer-brand">
           <img src={asset('Assests/logo - footer.png')} alt="TAITAN" className="footer-logo" />
-          <p className="footer-copyright">©2026 Taitan Global</p>
+          <p className="footer-copyright">©2026 Taitan</p>
         </div>
         <div className="footer-col footer-locations">
           <h3 className="footer-heading">Our Locations</h3>
@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="footer-location">
             <img src={asset('Assests/Footer - KSA.png')} alt="" className="footer-flag" />
             <div>
-              <p className="footer-address">Level 29, Olaya Towers Tower B, Riyadh, Saudi Arabia</p>
+              <p className="footer-address">Olaya Towers Tower B, Riyadh, Saudi Arabia</p>
               <p className="footer-phone">+966 56 775 9338</p>
             </div>
           </div>

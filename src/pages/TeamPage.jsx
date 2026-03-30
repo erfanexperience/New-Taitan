@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import { asset } from '../lib/assets';
 
 const INTRO = [
-  'TAITAN Global is led by operators and advisors who have spent their careers building, scaling, and governing technology enterprises across the United States and the Middle East. Together we align world-class AI capabilities with the priorities of Saudi Arabia\'s Vision 2030 and the organisations we serve.',
+  'TAITAN is led by operators and advisors who have spent their careers building, scaling, and governing technology enterprises across the United States and the Middle East. Together we align world-class AI capabilities with the priorities of Saudi Arabia\'s Vision 2030 and the organisations we serve.',
   'On this page you\'ll meet the executives responsible for strategy, delivery, and long-term stewardship of our mission.',
 ];
 
@@ -16,7 +16,7 @@ const MEMBERS = [
     image: 'Assests/Team Jason.webp',
     profileTo: '/jason',
     paragraphs: [
-      'Jason Roos is the Chief Executive Officer of TAITAN Global, an AI-focused strategic advisory firm connecting leading U.S. artificial intelligence solutions to the Saudi Arabian market.',
+      'Jason Roos is the Chief Executive Officer of TAITAN, an AI-focused strategic advisory firm connecting leading U.S. artificial intelligence solutions to the Saudi Arabian market.',
       'With over 25 years of experience, he has led major digital and AI transformations across healthcare, education, defense, and technology, operating at the intersection of Silicon Valley innovation and Saudi Arabia\'s Vision 2030.',
     ],
     photoOnRight: false,
@@ -27,7 +27,7 @@ const MEMBERS = [
     image: 'Assests/Team Danielle.webp',
     profileTo: '/danielle',
     paragraphs: [
-      'Danielle Ahmadi is the Chief Operating Officer of TAITAN Global, overseeing operational execution, scale, and market expansion across the United States and the Middle East.',
+      'Danielle Ahmadi is the Chief Operating Officer of TAITAN, overseeing operational execution, scale, and market expansion across the United States and the Middle East.',
       'With over 25 years of experience across international investments, technology, manufacturing, and software, she brings a disciplined, execution-focused approach to scaling complex initiatives in alignment with Saudi Arabia\'s Vision 2030.',
     ],
     photoOnRight: true,
@@ -38,7 +38,7 @@ const MEMBERS = [
     image: 'Assests/Team Erfan.webp',
     profileTo: null,
     paragraphs: [
-      'Erfan Farahani is the Chief Product Officer of TAITAN Global, responsible for product strategy and the path from advanced AI research to dependable solutions for enterprise and public-sector partners.',
+      'Erfan Farahani is the Chief Product Officer of TAITAN, responsible for product strategy and the path from advanced AI research to dependable solutions for enterprise and public-sector partners.',
       'He partners across leadership and engineering to prioritise roadmaps, integration, and adoption—balancing innovation with governance as the firm deepens its footprint in the United States and Saudi Arabia.',
     ],
     photoOnRight: false,
@@ -49,7 +49,7 @@ export default function TeamPage() {
   const [navOpen, setNavOpen] = useState(false);
 
   useEffect(() => {
-    document.title = 'Meet Our Team | TAITAN Global';
+    document.title = 'Meet Our Team | TAITAN';
     return () => {
       document.title = 'TAITAN – AI Mission Command';
     };

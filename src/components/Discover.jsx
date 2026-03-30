@@ -8,7 +8,7 @@ export default function Discover() {
       </div>
       <div className="discover-inner">
         <p className="discover-text">
-          TAITAN Global is the partner of choice for enterprises in{' '}
+          TAITAN is the partner of choice for enterprises in{' '}
           <span className="country-saudi">Saudi Arabia</span> and the{' '}
           <span className="country-us">United States</span>
         </p>

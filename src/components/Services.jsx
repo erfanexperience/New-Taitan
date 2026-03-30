@@ -25,11 +25,21 @@ const SERVICES = [
   },
 ];
 
+function headingLeadAndRest(heading) {
+  const i = heading.indexOf(' ');
+  if (i === -1) return { lead: heading, rest: '' };
+  return { lead: heading.slice(0, i), rest: heading.slice(i + 1) };
+}
+
 function ServiceBlock({ item, isVisible }) {
+  const { lead, rest } = headingLeadAndRest(item.heading);
   return (
     <article className={`service ${item.imageLeft ? 'service--image-left' : ''} ${isVisible ? 'service--visible' : ''}`}>
       <div className="service-content">
-        <h3 className="service-heading">{item.heading}</h3>
+        <h3 className="service-heading">
+          <span className="service-heading-lead">{lead}</span>
+          {rest ? <> {rest}</> : null}
+        </h3>
         <p className="service-desc">{item.desc}</p>
         {item.list.length > 0 ? (
           <ul className="service-list">
