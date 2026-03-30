@@ -113,13 +113,14 @@ export default function Hero({ navOpen, setNavOpen }) {
           <div className="hero-content">
             <h1 className="hero-heading">
               <span className="hero-heading-desktop">
-                <span className="hero-heading-line1">Built to Bridge.</span>
-                <span className="hero-heading-line2">Driven to Deliver.</span>
+                <span className="hero-heading-line1">Taitan,</span>
               </span>
               <span className="hero-heading-mobile">TAITAN</span>
             </h1>
             <p className="hero-subheading hero-subheading-desktop">
-              Connecting Capital, Strategy & Execution — From San Francisco to Riyadh.
+              The partner of choice for enterprises in{' '}
+              <span className="country-saudi">Saudi Arabia</span> and the{' '}
+              <span className="country-us">United States</span>.
             </p>
             <p className="hero-subheading hero-subheading-mobile">
               The partner of choice for

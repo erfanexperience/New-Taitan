@@ -8,9 +8,7 @@ export default function Discover() {
       </div>
       <div className="discover-inner">
         <p className="discover-text">
-          TAITAN is the partner of choice for enterprises in{' '}
-          <span className="country-saudi">Saudi Arabia</span> and the{' '}
-          <span className="country-us">United States</span>
+          TAITAN is the bridge that connects capital, strategy, and execution from San Francisco to Riyadh.
         </p>
       </div>
       <div className="discover-flag discover-flag-right">
