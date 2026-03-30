@@ -74,6 +74,34 @@ a {
   display: none;
 }
 
+.hero-bg-mobile-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.03);
+  filter: blur(6px);
+  transition:
+    opacity 900ms cubic-bezier(0.2, 0.85, 0.25, 1),
+    transform 900ms cubic-bezier(0.2, 0.85, 0.25, 1),
+    filter 900ms cubic-bezier(0.2, 0.85, 0.25, 1);
+  will-change: opacity, transform, filter;
+}
+
+.hero-bg-mobile-img--shown {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+.hero-bg-mobile-img--hidden {
+  opacity: 0;
+  transform: scale(1.03);
+  filter: blur(6px);
+}
+
 .navbar-toggle {
   display: none;
   flex-direction: column;
@@ -283,6 +311,18 @@ a {
     0 1px 2px rgba(0, 0, 0, 0.9),
     0 2px 20px rgba(0, 0, 0, 0.65),
     0 0 1px rgba(0, 0, 0, 0.8);
+}
+
+.hero-heading-desktop {
+  display: block;
+}
+
+.hero-heading-mobile {
+  display: none;
+}
+
+.hero-subheading-mobile {
+  display: none;
 }
 
 /* CTA white box */
@@ -501,10 +541,14 @@ a {
 .service-heading {
   margin: 0 0 16px;
   font-size: clamp(2rem, 4.2vw, 3rem);
-  font-weight: 800;
+  font-weight: 400;
   color: #0a0a0a;
   letter-spacing: -0.03em;
   line-height: 1.12;
+}
+
+.service-heading-lead {
+  font-weight: 800;
 }
 
 .service-desc {
@@ -513,9 +557,11 @@ a {
   line-height: 1.65;
   color: #2d2d2d;
   max-width: 38rem;
+  text-align: justify;
 }
 
 .service-list {
+  text-align: justify;
   margin: 0;
   padding: 0 0 0 1.25rem;
   list-style: disc;
@@ -1530,6 +1576,115 @@ a {
   display: none;
 }
 
+/* Partner With Us — desktop scroll reveal */
+@media (min-width: 769px) and (prefers-reduced-motion: no-preference) {
+  .partner-with-us:not(.partner-with-us--in-view) .partner-with-us-left {
+    opacity: 0;
+    transform: translateX(-36px);
+  }
+
+  .partner-with-us:not(.partner-with-us--in-view) .partner-with-us-center > * {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  .partner-with-us:not(.partner-with-us--in-view) .partner-with-us-right {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  .partner-with-us:not(.partner-with-us--in-view) .partner-main-img-desktop {
+    transform: scale(1.06);
+    filter: brightness(0.82) saturate(0.95);
+  }
+
+  .partner-with-us.partner-with-us--in-view .partner-with-us-left {
+    opacity: 1;
+    transform: translateX(0);
+    transition:
+      opacity 1.25s cubic-bezier(0.2, 0.85, 0.25, 1),
+      transform 1.25s cubic-bezier(0.2, 0.85, 0.25, 1);
+    transition-delay: 0.12s;
+  }
+
+  .partner-with-us.partner-with-us--in-view .partner-with-us-center > * {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 1.15s cubic-bezier(0.2, 0.85, 0.25, 1),
+      transform 1.15s cubic-bezier(0.2, 0.85, 0.25, 1);
+  }
+
+  .partner-with-us.partner-with-us--in-view .partner-with-us-center > *:nth-child(1) {
+    transition-delay: 0.22s;
+  }
+
+  .partner-with-us.partner-with-us--in-view .partner-with-us-center > *:nth-child(2) {
+    transition-delay: 0.36s;
+  }
+
+  .partner-with-us.partner-with-us--in-view .partner-with-us-center > *:nth-child(3) {
+    transition-delay: 0.52s;
+  }
+
+  .partner-with-us.partner-with-us--in-view .partner-with-us-center > *:nth-child(4) {
+    transition-delay: 0.66s;
+  }
+
+  .partner-with-us.partner-with-us--in-view .partner-with-us-center > *:nth-child(5) {
+    transition-delay: 0.8s;
+  }
+
+  .partner-with-us.partner-with-us--in-view .partner-with-us-center > *:nth-child(6) {
+    transition-delay: 0.94s;
+  }
+
+  .partner-with-us.partner-with-us--in-view .partner-with-us-center > *:nth-child(7) {
+    transition-delay: 1.08s;
+  }
+
+  .partner-with-us.partner-with-us--in-view .partner-with-us-center > *:nth-child(8) {
+    transition-delay: 1.22s;
+  }
+
+  .partner-with-us.partner-with-us--in-view .partner-with-us-center > *:nth-child(9) {
+    transition-delay: 1.36s;
+  }
+
+  .partner-with-us.partner-with-us--in-view .partner-with-us-center > *:nth-child(10) {
+    transition-delay: 1.5s;
+  }
+
+  .partner-with-us.partner-with-us--in-view .partner-with-us-right {
+    opacity: 1;
+    transform: translateX(0);
+    transition:
+      opacity 1.3s cubic-bezier(0.2, 0.85, 0.25, 1),
+      transform 1.3s cubic-bezier(0.2, 0.85, 0.25, 1);
+    transition-delay: 0.2s;
+  }
+
+  .partner-with-us.partner-with-us--in-view .partner-main-img-desktop {
+    transform: scale(1);
+    filter: brightness(1) saturate(1);
+    transition:
+      transform 1.45s cubic-bezier(0.2, 0.85, 0.25, 1),
+      filter 1.45s cubic-bezier(0.2, 0.85, 0.25, 1);
+    transition-delay: 0.28s;
+  }
+}
+
+@media (min-width: 769px) and (prefers-reduced-motion: reduce) {
+  .partner-with-us .partner-with-us-left,
+  .partner-with-us .partner-with-us-center > *,
+  .partner-with-us .partner-with-us-right,
+  .partner-with-us .partner-main-img-desktop {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
 /* Footer */
 .site-footer {
   width: 100%;
@@ -1763,7 +1918,6 @@ a {
   .team,
   .partners-logos,
   .reviews,
-  .innovation,
   .partner-with-us,
   .site-footer {
     max-width: 96vw;
@@ -1822,26 +1976,53 @@ a {
     text-align: center;
   }
 
-  .hero-heading,
-  .hero-heading-line1,
-  .hero-heading-line2 {
+  .hero-heading-desktop .hero-heading-line1,
+  .hero-heading-desktop .hero-heading-line2 {
     font-size: clamp(2.25rem, 10vw, 3rem);
   }
 
-  .hero-heading {
-    margin-bottom: 12px;
+  .hero-heading-desktop {
+    display: none;
   }
 
-  .hero-subheading {
-    margin-bottom: 0;
-    font-size: 0.9375rem;
-    font-weight: 600;
+  .hero-heading-mobile {
+    display: block;
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-size: clamp(2.65rem, 11vw, 3.35rem);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.05;
+    margin: 0;
+  }
+
+  .hero-heading {
+    margin-bottom: 6px;
+  }
+
+  .hero-subheading-desktop {
+    display: none;
+  }
+
+  .hero-subheading-mobile {
+    display: block;
+    margin: 0 auto;
+    max-width: 22rem;
+    font-size: clamp(0.9375rem, 4vw, 1.0625rem);
+    font-weight: 500;
+    line-height: 1.45;
     text-align: center;
     color: #fff;
     text-shadow:
       0 1px 2px rgba(0, 0, 0, 0.9),
       0 2px 18px rgba(0, 0, 0, 0.65),
       0 0 1px rgba(0, 0, 0, 0.8);
+  }
+
+  .hero-subheading-mobile .country-saudi,
+  .hero-subheading-mobile .country-us {
+    color: #fff;
+    font-weight: 700;
   }
 
   .hero-cta {
@@ -1854,28 +2035,7 @@ a {
   }
 
   .discover {
-    background: transparent;
-    border-radius: 0;
-    padding: 52px 20px 52px;
-    margin-left: 20px;
-    margin-right: 20px;
-    overflow: visible;
-  }
-
-  .discover-flag,
-  .discover-flag-left,
-  .discover-flag-right {
     display: none !important;
-  }
-
-  .discover-inner {
-    padding: 0;
-    max-width: 100%;
-  }
-
-  .discover-text {
-    font-size: clamp(1.0625rem, 2.5vw, 1.25rem);
-    color: #333;
   }
 
   .services {
@@ -1902,13 +2062,14 @@ a {
 
   .service-content {
     order: 1;
-    text-align: center;
+    text-align: left;
     padding-left: 0;
     padding-right: 0;
   }
 
   .service-heading {
-    margin-bottom: 24px;
+    font-size: clamp(2.35rem, 7vw, 3.15rem);
+    margin-bottom: 36px;
   }
 
   .service-desc,
@@ -2139,13 +2300,7 @@ a {
   }
 
   .innovation {
-    min-height: clamp(200px, 42svh, 65vh);
-    padding: 28px 14px;
-  }
-
-  .innovation-word {
-    font-size: min(4rem, max(1.45rem, 9.2vw));
-    transform: rotate(-4deg);
+    display: none !important;
   }
 
   .partner-with-us {
@@ -2238,22 +2393,6 @@ a {
     margin-top: 16px;
   }
 
-  /* Mobile refinements: discover text emphasis (flags hidden; room to breathe) */
-  .discover-inner {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .discover-text {
-    font-size: clamp(1.0625rem, 4.2vw, 1.5rem);
-    color: #333;
-  }
-
-  .discover-text .country-saudi,
-  .discover-text .country-us {
-    font-size: 1.08em;
-  }
-
   /* Mobile: Services sticky cards */
   .services {
     padding: 72px 20px 96px;
@@ -2284,9 +2423,14 @@ a {
 
   .service-content {
     order: 1;
-    text-align: center;
+    text-align: left;
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .service-heading {
+    font-size: clamp(2.35rem, 7vw, 3.15rem);
+    margin-bottom: 36px;
   }
 
   .service-desc,
