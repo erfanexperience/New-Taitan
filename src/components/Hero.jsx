@@ -13,7 +13,7 @@ export default function Hero({ navOpen, setNavOpen }) {
 
     const timeoutId = window.setTimeout(() => {
       setShowMobileHeroAlt(true);
-    }, 3000);
+    }, 2200);
 
     const handleChange = (e) => {
       if (!e.matches) {
@@ -48,7 +48,7 @@ export default function Hero({ navOpen, setNavOpen }) {
     const timeoutId = window.setTimeout(() => {
       setShowDesktopHeroAlt(true);
       document.documentElement.dataset.desktopHeroStage = 'main';
-    }, 3000);
+    }, 2200);
 
     const handleChange = (e) => {
       if (!e.matches) {
