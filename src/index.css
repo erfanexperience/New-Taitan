@@ -2861,6 +2861,18 @@ a {
   max-width: 1100px;
   margin: 0 auto;
   padding: clamp(2rem, 4vw, 3.25rem) clamp(1.25rem, 4vw, 2rem);
+
+  /* Scroll reveal */
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 1.6s ease-out,
+    transform 1.6s cubic-bezier(0.2, 0.85, 0.25, 1);
+}
+
+.team-landing-member--visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .team-landing-member--photo-right {
@@ -2947,6 +2959,11 @@ a {
     align-items: center;
     padding-top: 1.75rem;
     padding-bottom: 1.75rem;
+  }
+
+  /* Keep the reveal but reduce distance on mobile */
+  .team-landing-member {
+    transform: translateY(14px);
   }
 
   .team-landing-photo-oval {

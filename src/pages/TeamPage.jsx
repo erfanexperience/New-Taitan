@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SiteNavbar from '../components/SiteNavbar';
 import Footer from '../components/Footer';
@@ -47,12 +47,30 @@ const MEMBERS = [
 
 export default function TeamPage() {
   const [navOpen, setNavOpen] = useState(false);
+  const refs = useRef([]);
+  const [visible, setVisible] = useState({});
 
   useEffect(() => {
     document.title = 'Meet Our Team | TAITAN';
     return () => {
       document.title = 'TAITAN – AI Mission Command';
     };
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible((v) => ({ ...v, [entry.target.dataset.index]: true }));
+          }
+        });
+      },
+      { rootMargin: '0px 0px -20% 0px', threshold: 0.15 },
+    );
+
+    refs.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -77,10 +95,14 @@ export default function TeamPage() {
           </div>
         </div>
 
-        {MEMBERS.map((member) => (
+        {MEMBERS.map((member, i) => (
           <article
             key={member.name}
-            className={`team-landing-member ${member.photoOnRight ? 'team-landing-member--photo-right' : ''}`}
+            className={`team-landing-member ${member.photoOnRight ? 'team-landing-member--photo-right' : ''} ${
+              visible[i] ? 'team-landing-member--visible' : ''
+            }`}
+            ref={(el) => (refs.current[i] = el)}
+            data-index={i}
           >
             <div className="team-landing-photo-oval">
               <img src={asset(member.image)} alt="" />
