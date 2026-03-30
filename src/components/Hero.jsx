@@ -118,7 +118,7 @@ export default function Hero({ navOpen, setNavOpen }) {
               <span className="hero-heading-mobile">TAITAN</span>
             </h1>
             <p className="hero-subheading hero-subheading-desktop">
-              The partner of choice for enterprises in Saudi Arabia and the United States.
+              The Partner Of Choice For Enterprises In Saudi Arabia And The United States.
             </p>
             <p className="hero-subheading hero-subheading-mobile">
               The partner of choice for

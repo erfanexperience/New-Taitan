@@ -395,6 +395,10 @@ a {
 }
 
 @media (min-width: 769px) {
+  .hero-heading {
+    margin-bottom: 6px;
+  }
+
   .hero-subheading-desktop {
     font-size: clamp(1.15rem, 2.45vw, 1.35rem);
     line-height: 1.5;

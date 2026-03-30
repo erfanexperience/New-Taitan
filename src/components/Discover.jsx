@@ -8,7 +8,9 @@ export default function Discover() {
       </div>
       <div className="discover-inner">
         <p className="discover-text">
-          The bridge connecting capital, strategy, and execution from San Francisco to Riyadh.
+          The bridge connecting capital, strategy, and execution from{' '}
+          <span className="country-us">San Francisco</span> to{' '}
+          <span className="country-saudi">Riyadh</span>.
         </p>
       </div>
       <div className="discover-flag discover-flag-right">
