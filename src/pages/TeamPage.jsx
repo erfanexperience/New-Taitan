@@ -13,7 +13,7 @@ const MEMBERS = [
   {
     name: 'Jason Roos',
     title: 'CEO',
-    image: 'Assests/Team Jason.webp',
+    image: 'Assests/Team Jason 2.webp',
     profileTo: '/jason',
     paragraphs: [
       'Jason Roos is the Chief Executive Officer of TAITAN, an AI-focused strategic advisory firm connecting leading U.S. artificial intelligence solutions to the Saudi Arabian market.',
