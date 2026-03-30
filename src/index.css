@@ -481,7 +481,8 @@ a {
     flex-wrap: nowrap;
     align-items: baseline;
     white-space: nowrap;
-    font-weight: 800;
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-weight: 700;
     line-height: 1.1;
     color: #fff;
     text-transform: uppercase;
@@ -510,6 +511,7 @@ a {
   }
 
   .hero-heading-desktop-brand-cursor {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     display: inline-block;
     flex-shrink: 0;
     font-weight: 300;
@@ -2179,10 +2181,10 @@ a {
 
   .hero-heading-mobile {
     display: block;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
     font-size: clamp(2.65rem, 11vw, 3.35rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     text-transform: uppercase;
     line-height: 1.05;
     margin: 0;
