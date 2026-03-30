@@ -106,6 +106,7 @@ a {
 .hero-bg-desktop-img {
   position: absolute;
   inset: 0;
+  z-index: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -215,9 +216,29 @@ a {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 2;
   border-radius: 0 0 28px 28px;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
   pointer-events: none;
+}
+
+/* Desktop: left-edge gradient so hero text stays readable on bright skies */
+@media (min-width: 769px) {
+  .hero-bg-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      rgba(6, 10, 18, 0.82) 0%,
+      rgba(6, 10, 18, 0.5) 40%,
+      rgba(6, 10, 18, 0.18) 58%,
+      rgba(6, 10, 18, 0) 76%
+    );
+  }
 }
 
 /* Navbar: left image on left, menu pill centered */
@@ -354,6 +375,7 @@ a {
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
 }
 
+/* Legacy hero line classes (unused on current hero; kept for safety) */
 .hero-heading-line1 {
   display: block;
   font-size: clamp(2.3rem, 5.2vw, 3.4rem);
@@ -364,6 +386,42 @@ a {
   display: block;
   font-size: clamp(2.3rem, 5.2vw, 3.4rem);
   font-weight: 400;
+}
+
+/* Desktop hero: multi-line headline (no separate subheading) */
+.hero-heading-desktop-block {
+  display: block;
+}
+
+.hero-heading-desktop-block--lead {
+  margin-bottom: 0.5rem;
+}
+
+.hero-heading-desktop-line {
+  display: block;
+}
+
+.hero-heading-desktop-line--name {
+  font-size: clamp(1.75rem, 3.35vw, 2.45rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.28em;
+}
+
+.hero-heading-desktop-line--part1 {
+  font-size: clamp(1.2rem, 2.5vw, 1.72rem);
+  font-weight: 700;
+  letter-spacing: -0.022em;
+  line-height: 1.22;
+}
+
+.hero-heading-desktop-block--tail {
+  font-size: clamp(1.05rem, 2.15vw, 1.48rem);
+  font-weight: 500;
+  letter-spacing: -0.018em;
+  line-height: 1.28;
+  opacity: 0.98;
 }
 
 .hero-subheading {
@@ -396,15 +454,15 @@ a {
 
 @media (min-width: 769px) {
   .hero-heading {
-    margin-bottom: 6px;
+    margin-bottom: 0;
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.9),
+      0 2px 28px rgba(0, 0, 0, 0.5),
+      0 0 1px rgba(0, 0, 0, 0.75);
   }
 
-  .hero-subheading-desktop {
-    font-size: clamp(1.15rem, 2.45vw, 1.35rem);
-    line-height: 1.5;
-    max-width: min(48ch, 540px);
-    color: #fff;
-    font-weight: 600;
+  .hero-content {
+    max-width: min(34rem, 92%);
   }
 }
 
@@ -2059,11 +2117,6 @@ a {
     padding-right: 0;
     max-width: 100%;
     text-align: center;
-  }
-
-  .hero-heading-desktop .hero-heading-line1,
-  .hero-heading-desktop .hero-heading-line2 {
-    font-size: clamp(2.25rem, 10vw, 3rem);
   }
 
   .hero-heading-desktop {

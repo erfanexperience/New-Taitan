@@ -8,7 +8,7 @@ export default function Discover() {
       </div>
       <div className="discover-inner">
         <p className="discover-text">
-          The Bridge Connecting Capital, Strategy, And Execution From{' '}
+          Connecting Capital, Strategy, And Execution From{' '}
           <span className="country-us">San Francisco</span> To <span className="country-saudi">Riyadh</span>.
         </p>
       </div>

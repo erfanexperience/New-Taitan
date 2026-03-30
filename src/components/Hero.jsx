@@ -113,13 +113,18 @@ export default function Hero({ navOpen, setNavOpen }) {
           <div className="hero-content">
             <h1 className="hero-heading">
               <span className="hero-heading-desktop">
-                <span className="hero-heading-line1">Taitan</span>
+                <span className="hero-heading-desktop-block hero-heading-desktop-block--lead">
+                  <span className="hero-heading-desktop-line hero-heading-desktop-line--name">Taitan</span>
+                  <span className="hero-heading-desktop-line hero-heading-desktop-line--part1">
+                    The Partner Of Choice For Enterprises
+                  </span>
+                </span>
+                <span className="hero-heading-desktop-block hero-heading-desktop-block--tail">
+                  In Saudi Arabia And The United States.
+                </span>
               </span>
               <span className="hero-heading-mobile">TAITAN</span>
             </h1>
-            <p className="hero-subheading hero-subheading-desktop">
-              The Partner Of Choice For Enterprises In Saudi Arabia And The United States.
-            </p>
             <p className="hero-subheading hero-subheading-mobile">
               The partner of choice for
               <br />
