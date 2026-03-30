@@ -1,21 +1,23 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import Hero from '../components/Hero';
 import Discover from '../components/Discover';
 import Services from '../components/Services';
-import Innovation from '../components/Innovation';
 import PartnerWithUs from '../components/PartnerWithUs';
 import Footer from '../components/Footer';
+import PageLoadOverlay from '../components/PageLoadOverlay';
 
 export default function HomePage() {
   const [navOpen, setNavOpen] = useState(false);
+  const [homeIntroReady, setHomeIntroReady] = useState(false);
+  const onLoadOverlayDone = useCallback(() => setHomeIntroReady(true), []);
 
   return (
     <>
-      <Hero navOpen={navOpen} setNavOpen={setNavOpen} />
+      <PageLoadOverlay onComplete={onLoadOverlayDone} />
+      <Hero navOpen={navOpen} setNavOpen={setNavOpen} desktopIntroEnabled={homeIntroReady} />
       <Discover />
       <Services />
       <PartnerWithUs />
-      <Innovation />
       <Footer />
     </>
   );

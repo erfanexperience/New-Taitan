@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import { asset } from '../lib/assets';
 
 const INTRO = [
-  'TAITAN is led by operators and advisors who have spent their careers building, scaling, and governing technology enterprises across the United States and the Middle East. Together we align world-class AI capabilities with the priorities of Saudi Arabia\'s Vision 2030 and the organisations we serve.',
+  'TAITAN is led by operators and advisors who have spent their careers building, scaling, and governing technology enterprises across the United States and the Middle East. Together we align world-class capabilities with the priorities of Saudi Arabia\'s Vision 2030 and the organisations we serve.',
   'On this page you\'ll meet the executives responsible for strategy, delivery, and long-term stewardship of our mission.',
 ];
 
