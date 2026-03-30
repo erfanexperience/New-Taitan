@@ -102,6 +102,25 @@ a {
   filter: blur(10px);
 }
 
+.hero-typing-text {
+  display: inline-block;
+}
+
+.hero-typing-dot {
+  display: inline-block;
+  margin-left: 0.06em;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.hero-typing-dot--on {
+  opacity: 1;
+}
+
+.hero-typing-dot--off {
+  opacity: 0;
+}
+
 .navbar-toggle {
   display: none;
   flex-direction: column;
@@ -1959,9 +1978,9 @@ a {
   }
 
   .hero-content-wrap {
-    justify-content: center;
-    align-items: center;
-    padding-top: 24px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 36px;
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 0;
@@ -1973,7 +1992,7 @@ a {
     padding-left: 0;
     padding-right: 0;
     max-width: 100%;
-    text-align: center;
+    text-align: left;
   }
 
   .hero-heading-desktop .hero-heading-line1,
@@ -1994,14 +2013,12 @@ a {
     text-transform: uppercase;
     line-height: 1.05;
     margin: 0;
-    text-shadow:
-      0 1px 2px rgba(0, 0, 0, 0.9),
-      0 2px 18px rgba(0, 0, 0, 0.65),
-      0 0 1px rgba(0, 0, 0, 0.8);
+    text-shadow: none;
   }
 
   .hero-heading {
     margin-bottom: 6px;
+    text-shadow: none;
   }
 
   .hero-subheading-desktop {
@@ -2010,17 +2027,14 @@ a {
 
   .hero-subheading-mobile {
     display: block;
-    margin: 0 auto;
-    max-width: 22rem;
+    margin: 0;
+    max-width: 24rem;
     font-size: clamp(0.9375rem, 4vw, 1.0625rem);
     font-weight: 500;
     line-height: 1.45;
-    text-align: center;
+    text-align: left;
     color: #fff;
-    text-shadow:
-      0 1px 2px rgba(0, 0, 0, 0.9),
-      0 2px 18px rgba(0, 0, 0, 0.65),
-      0 0 1px rgba(0, 0, 0, 0.8);
+    text-shadow: none;
   }
 
   .hero-subheading-mobile .country-saudi,
