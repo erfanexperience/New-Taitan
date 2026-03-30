@@ -394,6 +394,16 @@ a {
   display: none;
 }
 
+@media (min-width: 769px) {
+  .hero-subheading-desktop {
+    font-size: clamp(1.15rem, 2.45vw, 1.35rem);
+    line-height: 1.5;
+    max-width: min(48ch, 540px);
+    color: #fff;
+    font-weight: 600;
+  }
+}
+
 /* CTA white box */
 .hero-cta {
   display: flex;

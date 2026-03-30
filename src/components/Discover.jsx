@@ -8,7 +8,7 @@ export default function Discover() {
       </div>
       <div className="discover-inner">
         <p className="discover-text">
-          TAITAN is the bridge that connects capital, strategy, and execution from San Francisco to Riyadh.
+          The bridge connecting capital, strategy, and execution from San Francisco to Riyadh.
         </p>
       </div>
       <div className="discover-flag discover-flag-right">
