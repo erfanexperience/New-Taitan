@@ -279,7 +279,7 @@ a {
 }
 
 .hero-heading {
-  margin: 0 0 18px;
+  margin: 0 0 14px;
   color: #fff;
   line-height: 1.1;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
@@ -287,13 +287,13 @@ a {
 
 .hero-heading-line1 {
   display: block;
-  font-size: clamp(2.875rem, 6.5vw, 4.25rem);
+  font-size: clamp(2.3rem, 5.2vw, 3.4rem);
   font-weight: 700;
 }
 
 .hero-heading-line2 {
   display: block;
-  font-size: clamp(2.875rem, 6.5vw, 4.25rem);
+  font-size: clamp(2.3rem, 5.2vw, 3.4rem);
   font-weight: 400;
 }
 

@@ -64,13 +64,13 @@ export default function Hero({ navOpen, setNavOpen }) {
           <div className="hero-content">
             <h1 className="hero-heading">
               <span className="hero-heading-desktop">
-                <span className="hero-heading-line1">AI Mission</span>
-                <span className="hero-heading-line2">Command</span>
+                <span className="hero-heading-line1">Built to Bridge.</span>
+                <span className="hero-heading-line2">Driven to Deliver</span>
               </span>
               <span className="hero-heading-mobile">TAITAN</span>
             </h1>
             <p className="hero-subheading hero-subheading-desktop">
-              Total AI Transformation, Acceleration & Navigation – From Strategy To Execution.
+              Connecting Capital, Strategy & Execution — From San Francisco to Riyadh.
             </p>
             <p className="hero-subheading hero-subheading-mobile">
               The partner of choice for
