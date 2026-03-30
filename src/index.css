@@ -1853,6 +1853,8 @@ a {
     height: 48px;
     min-width: 48px;
     min-height: 48px;
+    position: relative;
+    z-index: 120; /* Keep hamburger/close icon above the fixed overlay menu */
   }
 
   .navbar-toggle-bar {
