@@ -3,6 +3,7 @@ import { asset } from '../lib/assets';
 
 const GEMINI_MODEL = 'gemini-flash-latest';
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mkopbnde';
 
 const TAITAN_SYSTEM_PROMPT = `You are a warm, articulate ambassador for TAITAN, an AI-focused strategic advisory firm serving enterprises in Saudi Arabia and the United States.
 
@@ -41,6 +42,7 @@ export default function PartnerWithUs({
   const [fullReply, setFullReply] = useState('');
   const [displayedReply, setDisplayedReply] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [submitState, setSubmitState] = useState('idle'); // idle | sending | success | error
 
   const recognitionRef = useRef(null);
   const sectionRef = useRef(null);
@@ -281,6 +283,7 @@ export default function PartnerWithUs({
   function handleSubmit(e) {
     e.preventDefault();
     setFormError(null);
+    setSubmitState('idle');
     if (voiceProject) {
       if (!capturedTranscript.trim()) {
         setFormError('Describe your project with the microphone first, then wait for your message from TAITAN.');
@@ -291,6 +294,34 @@ export default function PartnerWithUs({
         return;
       }
     }
+
+    const formEl = e.currentTarget;
+    const formData = new FormData(formEl);
+    formData.append('_subject', 'Partner With Us submission');
+    formData.append('_replyto', String(formData.get('email') || ''));
+
+    setSubmitState('sending');
+
+    fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Accept: 'application/json',
+      },
+    })
+      .then(async (res) => {
+        if (!res.ok) {
+          const data = await res.json().catch(() => ({}));
+          throw new Error(data?.errors?.[0]?.message || 'Could not submit right now. Please try again.');
+        }
+        setSubmitState('success');
+        formEl.reset();
+        setFormError(null);
+      })
+      .catch((err) => {
+        setSubmitState('error');
+        setFormError(err?.message || 'Could not submit right now. Please try again.');
+      });
   }
 
   const nameId = `${inputIdPrefix}partner-name`;
@@ -313,7 +344,7 @@ export default function PartnerWithUs({
           <p className="partner-with-us-desc">
             If you're someone who's looking to bring a space to life, share a few details to help me reach out to you so we can discuss how to bring your vision to life.
           </p>
-          <form className="partner-with-us-form" onSubmit={handleSubmit} action="#" method="post">
+          <form className="partner-with-us-form" onSubmit={handleSubmit} action={FORMSPREE_ENDPOINT} method="post">
             {voiceProject ? (
               <>
                 <input type="hidden" name="voice_transcript" value={capturedTranscript} readOnly aria-hidden />
@@ -405,12 +436,19 @@ export default function PartnerWithUs({
                 <textarea id={projectId} name="project" rows={4} required />
               </>
             )}
+            {submitState === 'success' ? (
+              <p className="partner-voice-success" role="status">
+                Thanks - your message was sent. We will reach out soon.
+              </p>
+            ) : null}
             {formError ? (
               <p className="partner-voice-error" role="alert">
                 {formError}
               </p>
             ) : null}
-            <button type="submit" className="partner-with-us-submit">Let's Connect</button>
+            <button type="submit" className="partner-with-us-submit" disabled={submitState === 'sending'}>
+              {submitState === 'sending' ? 'Sending...' : "Let's Connect"}
+            </button>
           </form>
         </div>
         <div className="partner-with-us-right">

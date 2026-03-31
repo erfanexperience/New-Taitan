@@ -1723,6 +1723,14 @@ a {
   line-height: 1.4;
 }
 
+.partner-voice-success {
+  margin: 8px 0 0;
+  max-width: 380px;
+  font-size: 0.8125rem;
+  color: #bbf7d0;
+  line-height: 1.4;
+}
+
 .partner-with-us-submit {
   display: block;
   margin-top: 24px;
@@ -1740,6 +1748,11 @@ a {
 
 .partner-with-us-submit:hover {
   background: #555;
+}
+
+.partner-with-us-submit:disabled {
+  opacity: 0.72;
+  cursor: wait;
 }
 
 .partner-with-us-right {
