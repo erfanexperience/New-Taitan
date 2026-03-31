@@ -17,6 +17,20 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="TAITAN – AI Mission Command">
   <meta name="twitter:image" content="https://taitanglobal.ai/Assests/Media.webp">
+  <script>
+    // GitHub Pages SPA fallback: restore deep-link path redirected from 404.html
+    (function () {
+      var l = window.location;
+      if (l.search[1] === '/') {
+        var decoded = l.search
+          .slice(1)
+          .split('&')
+          .map(function (s) { return s.replace(/~and~/g, '&'); })
+          .join('?');
+        window.history.replaceState(null, null, decoded + l.hash);
+      }
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
