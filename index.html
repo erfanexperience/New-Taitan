@@ -28,6 +28,9 @@
           .map(function (s) { return s.replace(/~and~/g, '&'); })
           .join('?');
         window.history.replaceState(null, null, decoded + l.hash);
+      } else if (l.search.length > 1 && l.search[1] !== '?') {
+        // Backward-compat for older fallback links like ?jason (missing /)
+        window.history.replaceState(null, null, '/' + l.search.slice(1) + l.hash);
       }
     })();
   </script>

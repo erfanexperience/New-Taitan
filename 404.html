@@ -12,7 +12,7 @@
           '//' +
           l.hostname +
           (l.port ? ':' + l.port : '') +
-          '/?' +
+          '/?/' +
           l.pathname.slice(1).replace(/&/g, '~and~') +
           (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
           l.hash;
