@@ -635,87 +635,70 @@ a {
   color: #004182;
 }
 
-/* Discover section */
+/* Discover section (desktop): pulse image only, full image visible, no crop */
 .discover {
   position: relative;
-  background: #F4F4F4;
+  display: block;
+  background: #f4f4f4;
   border-radius: 32px;
-  /* Symmetric vertical padding so the headline sits centered in the band (flags span full height) */
-  padding: 60px 32px 60px;
+  padding: clamp(20px, 3vw, 36px) clamp(20px, 3vw, 32px);
   max-width: min(90vw, 100%);
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
 }
 
-.discover-flag {
+.discover-pulse-hit {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 22%;
-  min-width: 140px;
-  max-width: 280px;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  cursor: inherit !important;
 }
 
-.discover-flag-left {
-  left: 0;
-  border-radius: 32px 0 0 32px;
+.discover-pulse-hit:focus-visible {
+  outline: 2px solid #0a66c2;
+  outline-offset: 3px;
+}
+
+.discover-pulse-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
-.discover-flag-right {
-  right: 0;
-  border-radius: 0 32px 32px 0;
-  overflow: hidden;
-}
-
-.discover-flag img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.discover-inner {
+.discover-pulse-wrap {
   position: relative;
-  z-index: 1;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0 28px;
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
 }
 
-.discover-text {
-  margin: 0;
-  font-size: clamp(1.375rem, 3vw, 1.625rem);
-  line-height: 1.35;
-  font-weight: 700;
-  color: #333;
-  text-align: center;
+.discover-pulse-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
-/* Tablet / narrow desktop: more room between flags, fluid type (no extra “column crush”) */
 @media (max-width: 900px) {
   .discover {
-    padding: 56px 24px 56px;
-  }
-
-  .discover-flag {
-    width: 16%;
-    min-width: 72px;
-    max-width: 155px;
-  }
-
-  .discover-inner {
-    max-width: min(700px, 100%);
-    padding: 0 clamp(14px, 4vw, 28px);
-  }
-
-  .discover-text {
-    font-size: clamp(1rem, 1.65vw + 0.65rem, 1.55rem);
-    line-height: 1.32;
+    padding: clamp(16px, 2.5vw, 28px) clamp(16px, 2.5vw, 24px);
   }
 }
 
@@ -3307,5 +3290,32 @@ a {
 
   .profile-contact-item {
     font-size: 0.9375rem;
+  }
+}
+
+/* Profile mobile: keep whole page within viewport height (logo + card) */
+@media (max-width: 768px) {
+  .profile-page {
+    height: 100svh;
+    min-height: 100svh;
+    padding: 0 14px 14px;
+    overflow: hidden;
+  }
+
+  .profile-header {
+    flex: 0 0 auto;
+    padding: 14px 0 12px;
+  }
+
+  .profile-logo {
+    height: 48px;
+  }
+
+  .profile-card {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
+    overflow: auto;
+    width: 100%;
   }
 }
