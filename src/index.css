@@ -2265,11 +2265,9 @@ a {
   }
 
   .discover.discover--mobile {
-    width: calc(96vw - 28px);
-    max-width: calc(96vw - 28px);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 14px;
+    margin-top: 16px;
     margin-bottom: 0;
   }
 
@@ -2631,7 +2629,7 @@ a {
 
   /* Mobile: Services sticky cards */
   .services {
-    padding: 14px 20px 96px;
+    padding: 0 0 96px;
   }
 
   .service-block-wrap {
@@ -2639,8 +2637,8 @@ a {
     top: 12px;
     background: #f4f4f4;
     border-radius: 20px;
-    padding: 32px 18px 36px;
-    margin-bottom: 72px;
+    padding: 16px 18px 36px;
+    margin-bottom: 16px;
   }
 
   .service-block-wrap:last-child {
