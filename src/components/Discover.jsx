@@ -3,6 +3,7 @@ import { asset } from '../lib/assets';
 
 const PULSE_URL = 'https://pulse.taitanglobal.ai/';
 const PULSE_CURSOR = asset('Assests/pulse-cursor.png');
+const PULSE_MOBILE = asset('Assests/Pulse - Mobile.webp');
 const CURSOR_SCALE = 0.7;
 
 export default function Discover() {
@@ -40,24 +41,40 @@ export default function Discover() {
     : undefined;
 
   return (
-    <div
-      className="discover"
-      id="discover"
-      style={{ cursor: cursorStyle }}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
-      <div className="discover-pulse-wrap">
-        <img src={asset('Assests/pulse.webp')} alt="" className="discover-pulse-img" />
-      </div>
-      <a
-        href={PULSE_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="discover-pulse-hit"
+    <>
+      <div
+        className="discover discover--desktop"
+        id="discover"
+        style={{ cursor: cursorStyle }}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
       >
-        <span className="discover-pulse-sr-only">Open TAITAN Pulse (new tab)</span>
-      </a>
-    </div>
+        <div className="discover-pulse-wrap">
+          <img src={asset('Assests/pulse.webp')} alt="" className="discover-pulse-img" />
+        </div>
+        <a
+          href={PULSE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="discover-pulse-hit"
+        >
+          <span className="discover-pulse-sr-only">Open TAITAN Pulse (new tab)</span>
+        </a>
+      </div>
+
+      <div className="discover discover--mobile">
+        <div className="discover-pulse-wrap">
+          <img src={PULSE_MOBILE} alt="" className="discover-pulse-img" />
+        </div>
+        <a
+          href={PULSE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="discover-pulse-hit"
+        >
+          <span className="discover-pulse-sr-only">Open TAITAN Pulse (new tab)</span>
+        </a>
+      </div>
+    </>
   );
 }

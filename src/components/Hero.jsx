@@ -163,6 +163,22 @@ export default function Hero({ navOpen, setNavOpen, desktopIntroEnabled = false 
               <br />
               <span className="country-us">United States</span>.
             </p>
+            <div className="hero-mobile-pulse">
+              <div className="hero-mobile-pulse-divider" />
+              <p className="hero-mobile-pulse-text">Check out our Saudi tech news platform.</p>
+              <a
+                href="https://pulse.taitanglobal.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-mobile-pulse-button"
+              >
+                <img
+                  src={asset('Assests/pulse-mobile-button.webp')}
+                  alt="Open TAITAN Pulse"
+                  className="hero-mobile-pulse-button-img"
+                />
+              </a>
+            </div>
             {/* LinkedIn CTA removed (desktop) */}
           </div>
         </div>

@@ -199,7 +199,7 @@ a {
   }
 
   /* Reveal the Discover band after the hero intro (height shrink) */
-  html[data-desktop-hero-stage='tall'] .discover {
+  html[data-desktop-hero-stage='tall'] .discover--desktop {
     opacity: 0;
     transform: translateY(-110px);
     filter: blur(16px);
@@ -207,7 +207,7 @@ a {
     pointer-events: none;
   }
 
-  html[data-desktop-hero-stage='main'] .discover {
+  html[data-desktop-hero-stage='main'] .discover--desktop {
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
@@ -577,6 +577,37 @@ a {
   display: none;
 }
 
+.hero-mobile-pulse {
+  display: none;
+}
+
+.hero-mobile-pulse-divider {
+  width: 64px;
+  height: 2px;
+  margin: 8px auto 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.hero-mobile-pulse-text {
+  margin: 0 0 10px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.hero-mobile-pulse-button {
+  display: inline-block;
+}
+
+.hero-mobile-pulse-button-img {
+  display: block;
+  width: 150px;
+  max-width: 55vw;
+  height: auto;
+}
+
 @media (min-width: 769px) {
   .hero-content-wrap {
     margin-top: clamp(-18px, -3.75vh, -52px);
@@ -635,12 +666,10 @@ a {
   color: #004182;
 }
 
-/* Discover section (desktop): pulse image only, full image visible, no crop */
+/* Discover / Pulse band — desktop + mobile variants */
 .discover {
   position: relative;
-  display: block;
   background: #f4f4f4;
-  border-radius: 32px;
   padding: clamp(20px, 3vw, 36px) clamp(20px, 3vw, 32px);
   max-width: min(90vw, 100%);
   margin-left: auto;
@@ -650,6 +679,28 @@ a {
   overflow: hidden;
   text-decoration: none;
   color: inherit;
+}
+
+.discover.discover--desktop {
+  display: none;
+  border-radius: 32px;
+}
+
+.discover.discover--mobile {
+  display: block;
+  border-radius: 20px;
+  margin-top: 16px;
+  padding: 16px 14px;
+}
+
+@media (min-width: 769px) {
+  .discover.discover--desktop {
+    display: block;
+  }
+
+  .discover.discover--mobile {
+    display: none;
+  }
 }
 
 .discover-pulse-hit {
@@ -2207,6 +2258,14 @@ a {
     text-shadow: none;
   }
 
+  .hero-mobile-pulse {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .hero-subheading-mobile .country-saudi,
   .hero-subheading-mobile .country-us {
     color: #fff;
@@ -2220,10 +2279,6 @@ a {
   .service-list {
     list-style-position: inside;
     padding-left: 0;
-  }
-
-  .discover {
-    display: none !important;
   }
 
   .services {
