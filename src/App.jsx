@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import JasonPage from './pages/JasonPage';
 import DaniellePage from './pages/DaniellePage';
+// eslint-disable-next-line no-unused-vars -- kept for when the team page is restored
 import TeamPage from './pages/TeamPage';
 
 function ScrollToHash() {
@@ -24,7 +25,8 @@ export default function App() {
       <ScrollToHash />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/team" element={<TeamPage />} />
+        {/* Team page temporarily hidden: redirect to home. To restore, use element={<TeamPage />} */}
+        <Route path="/team" element={<Navigate to="/" replace />} />
         <Route path="/jason" element={<JasonPage />} />
         <Route path="/danielle" element={<DaniellePage />} />
       </Routes>

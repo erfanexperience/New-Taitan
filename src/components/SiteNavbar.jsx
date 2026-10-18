@@ -35,11 +35,13 @@ export default function SiteNavbar({
       </button>
       <div className="navbar-segment navbar-menu-segment">
         <ul className="navbar-menu">
+          {/* Temporarily hidden — restore along with the /team route in App.jsx
           <li>
             <Link to="/team" onClick={() => setNavOpen(false)}>
               Our Team
             </Link>
           </li>
+          */}
           <li>
             <Link to={{ pathname: '/', hash: 'who-we-are' }} onClick={() => setNavOpen(false)}>
               Who We Are
